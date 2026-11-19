@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: garage-api
+  profiles:
+    default: dev
+  jpa:
+    open-in-view: false
+  jackson:
+    default-property-inclusion: always
+
+server:
+  port: ${PORT:8080}
+
+app:
+  cors:
+    allowed-origin: ${CORS_ORIGIN:http://localhost:4200}
+  seed:
+    enabled: true

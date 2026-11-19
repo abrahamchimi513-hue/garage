@@ -1,0 +1,15 @@
+# Profil prod : MySQL. Aucun secret ici : tout vient des variables d'environnement.
+#   DB_URL (facultative), DB_USER, DB_PASSWORD (obligatoires), CORS_ORIGIN (facultative)
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/garage_db?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  h2:
+    console:
+      enabled: false
+  jpa:
+    hibernate:
+      # "update" crée/complète le schéma mais n'efface JAMAIS les données au redémarrage
+      ddl-auto: update
+    show-sql: false
